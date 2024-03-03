@@ -25,6 +25,13 @@ PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 TARGET_SCREEN_HEIGHT := 2856
 TARGET_SCREEN_WIDTH := 1280
 
+TARGET_FACE_UNLOCK_SUPPORTED := false
+
+ifneq ($(WITH_GMS),false)
+TARGET_PREBUILT_GOOGLE_CAMERA := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+endif
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="caiman-user 15 BP1A.250505.005 13277524 release-keys" \
     BuildFingerprint=google/caiman/caiman:15/BP1A.250505.005/13277524:user/release-keys \
