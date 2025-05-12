@@ -16,6 +16,9 @@ $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 $(call inherit-product, device/google/zumapro/lineage_common.mk)
 $(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-lineage.mk)
 
+DERPFEST_BUILD_TYPE := Official
+DERPFEST_BUILD_VARIANT := Stable
+
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 9 Pro
@@ -26,11 +29,6 @@ TARGET_SCREEN_HEIGHT := 2856
 TARGET_SCREEN_WIDTH := 1280
 
 TARGET_FACE_UNLOCK_SUPPORTED := false
-
-ifneq ($(WITH_GMS),false)
-TARGET_PREBUILT_GOOGLE_CAMERA := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
-endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="caiman-user 15 BP1A.250505.005 13277524 release-keys" \
